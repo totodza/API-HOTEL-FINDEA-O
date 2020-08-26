@@ -17,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+//guardar
+Route::post('ingresarusuario','UserController@ingresar_usuario');
+Route::post('ingresartipoh','tipodehabitacionController@ingresar_tipodehabitacion');
+Route::post('ingresarreservacion','ReservacionController@ingresar_reservacion');
+
+///validar
+Route::post('validarusuario','UserController@valida');
+
+
+//mostar
