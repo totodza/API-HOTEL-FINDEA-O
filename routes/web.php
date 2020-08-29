@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('registro', 'tipodehabitacionController@index');
+Route::post('guardarregistro', 'tipodehabitacionController@ingresar_tipodehabitacion2');

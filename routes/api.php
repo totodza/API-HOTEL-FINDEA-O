@@ -18,12 +18,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 //guardar
-Route::post('ingresarusuario','UserController@ingresar_usuario');
+Route::resource('user','UserController');
+Route::get('user/{name}/{password}','UserController@show');
+
+
+///////////////////////////////
 Route::post('ingresartipoh','tipodehabitacionController@ingresar_tipodehabitacion');
+Route::post('ingresarhabitacion','HabitacionesController@ingresar_habitacion');
 Route::post('ingresarreservacion','ReservacionController@ingresar_reservacion');
 
+Route::get('obtenerHabitaciones/{estado}','HabitacionesController@obtenerHabitaciones');
+
 ///validar
-Route::post('validarusuario','UserController@valida');
+//Route::post('validarusuario','UserController@valida');
 
 
 //mostar

@@ -12,4 +12,8 @@ class tipodehabitacion extends Model
     protected $fillable = [
         'nombrehabitacion', 'numerocamas', 'aire','precio','imagen'
     ];
+
+    public function Habitaciones(){
+        return $this->hasMany('App\Habitaciones');
+    }
 }

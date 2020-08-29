@@ -9,7 +9,12 @@ class Habitaciones extends Model
     public $timestamps=false;
     public $table = "habitacion";
 
+    
     protected $fillable = [
         'numero', 'piso', 'estado','tipodehabitacion_id'
     ];
+
+     public function tipodehabitacion(){
+        return $this->belongsTo('App\tipodehabitacion');
+    }
 }
