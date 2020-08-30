@@ -26,4 +26,11 @@ class HabitacionesController extends Controller{
 
         return response()->json (['habita'=>$habitaciones, 'code'=>200]);
     }
+
+    public function buscarHabitacion($id){
+        //$habitaciones=Habitaciones::all();
+        $habitacion=Habitaciones::with('tipodehabitacion')->where('id',$id)->get();
+
+        return response()->json (['buscarHabita'=>$habitacion, 'code'=>200]);
+    }
 }

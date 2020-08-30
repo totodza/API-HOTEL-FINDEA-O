@@ -28,7 +28,7 @@ Route::post('ingresarhabitacion','HabitacionesController@ingresar_habitacion');
 Route::post('ingresarreservacion','ReservacionController@ingresar_reservacion');
 
 Route::get('obtenerHabitaciones/{estado}','HabitacionesController@obtenerHabitaciones');
-
+Route::get('buscarHabitacion/{id}','HabitacionesController@buscarHabitacion');
 ///validar
 //Route::post('validarusuario','UserController@valida');
 
