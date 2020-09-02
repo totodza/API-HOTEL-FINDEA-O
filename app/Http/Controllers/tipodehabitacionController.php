@@ -48,4 +48,11 @@ class tipodehabitacionController extends Controller
         return view('pageingresar');
     }
 
+    public function buscarHabitacion($nombrehabitacion){
+        //$habitaciones=Habitaciones::all();
+        $tipodehabitacion=tipodehabitacion::with('Habitaciones')->where('nombrehabitacion',$nombrehabitacion)->get();
+
+        return response()->json (['resultado'=>$tipodehabitacion, 'code'=>200]);
+    }
+
 }

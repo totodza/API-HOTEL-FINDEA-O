@@ -24,11 +24,16 @@ Route::get('user/{name}/{password}','UserController@show');
 
 ///////////////////////////////
 Route::post('ingresartipoh','tipodehabitacionController@ingresar_tipodehabitacion');
+
 Route::post('ingresarhabitacion','HabitacionesController@ingresar_habitacion');
-Route::post('ingresarreservacion','ReservacionController@ingresar_reservacion');
+//Route::post('ingresarreservacion','ReservacionController@ingresar_reservacion');
 
 Route::get('obtenerHabitaciones/{estado}','HabitacionesController@obtenerHabitaciones');
 Route::get('buscarHabitacion/{id}','HabitacionesController@buscarHabitacion');
+
+Route::get('resultado/{nombrehabitacion}','tipodehabitacionController@buscarHabitacion');
+
+Route::post('reservacion','ReservacionController@ingresar_reservacion');
 ///validar
 //Route::post('validarusuario','UserController@valida');
 
