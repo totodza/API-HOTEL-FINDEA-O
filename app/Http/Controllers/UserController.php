@@ -53,12 +53,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($correo,$password)
-    {
+    public function show($correo,$password){
         if ($correo == "correo"|| $password == "null") {
             return response()->json(['mensaje'=>"Campos vacios",'code'=>'406', 'value'=>'false']);
         }
-
         $datos=User::where('correo', $correo)->where('password', $password)->get();  
         return response()->json(['register'=>$datos]);
     }

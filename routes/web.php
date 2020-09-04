@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 Route::get('registro', 'tipodehabitacionController@index');
 Route::post('guardarregistro', 'tipodehabitacionController@ingresar_tipodehabitacion2');
+
+Route::get('prueba/{id}','ReservacionController@ReservacionUser');

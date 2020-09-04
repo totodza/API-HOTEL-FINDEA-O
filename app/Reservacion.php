@@ -10,6 +10,15 @@ class Reservacion extends Model
     public $table = "reservacion";
 
     protected $fillable = [
-        'fecha_entrada', 'fecha_salida','habitacion_id'
+        'fecha_entrada', 'fecha_salida','habitacion_id','users_id'
     ];
+
+    public function User(){
+        return $this->belongsTo('App\User', 'id');
+    }
+
+    public function Habitaciones(){
+        return $this->belongsTo('App\Habitaciones', 'id');
+  
+    }
 }

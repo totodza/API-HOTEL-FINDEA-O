@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 //guardar
 Route::resource('user','UserController');
+
 Route::get('user/{name}/{password}','UserController@show');
 
 
@@ -34,8 +35,11 @@ Route::get('buscarHabitacion/{id}','HabitacionesController@buscarHabitacion');
 Route::get('resultado/{nombrehabitacion}','tipodehabitacionController@buscarHabitacion');
 
 Route::post('reservacion','ReservacionController@ingresar_reservacion');
+
+//eliminar
+Route::post('eliminar','ReservacionController@EliminarReservacion');
 ///validar
 //Route::post('validarusuario','UserController@valida');
 
-
-//mostar
+//lista de departamentos
+Route::get('prueba/{id}','ReservacionController@ReservacionUser');

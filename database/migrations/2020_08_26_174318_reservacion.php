@@ -19,6 +19,9 @@ class Reservacion extends Migration
             $table->date('fecha_salida');
             $table->unsignedBigInteger('habitacion_id');
             $table->foreign('habitacion_id')->references('id')->on('habitacion');
+
+            $table->unsignedBigInteger('users_id');
+            $table->foreign('users_id')->references('id')->on('users');
         });
     }
 
