@@ -37,7 +37,7 @@ Route::get('resultado/{nombrehabitacion}','tipodehabitacionController@buscarHabi
 Route::post('reservacion','ReservacionController@ingresar_reservacion');
 
 //eliminar
-Route::post('eliminar','ReservacionController@EliminarReservacion');
+Route::get('eliminar/{id}','ReservacionController@EliminarReservacion');
 ///validar
 //Route::post('validarusuario','UserController@valida');
 

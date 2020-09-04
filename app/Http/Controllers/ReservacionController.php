@@ -32,7 +32,7 @@ class ReservacionController extends Controller
     }
 
     public function ReservacionUser($id){
-        $reservaciones=array();
+        //$reservaciones=array();
         $reservaciones=Reservacion::with('Habitaciones.tipodehabitacion')->where('users_id',$id)->get();
         
         // foreach ($reservaciones as $ba) {
@@ -54,7 +54,6 @@ class ReservacionController extends Controller
 
     public function EliminarReservacion(Request $request){
          $reservaciones = Reservacion::find($request->id)->delete();
-
         return response()->json (['eliminado'=>'reservacion eliminada']);
     }
 }
