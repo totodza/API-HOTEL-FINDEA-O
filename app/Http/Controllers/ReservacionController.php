@@ -53,7 +53,14 @@ class ReservacionController extends Controller
     }
 
     public function EliminarReservacion(Request $request){
+         $volver=Habitaciones::find($request->id);
+         $volver->estado='desocupado';
+         $volver->save();
+
          $reservaciones = Reservacion::find($request->id)->delete();
         return response()->json (['eliminado'=>'reservacion eliminada']);
+
     }
+
+
 }
